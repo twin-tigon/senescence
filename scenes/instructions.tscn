@@ -4,25 +4,24 @@
 [ext_resource path="res://scripts/instructions.gd" type="Script" id=2]
 [ext_resource path="res://fonts/SpaceMono-Regular.tres" type="DynamicFont" id=4]
 
-
 [node name="world" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 256, 256 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="arrowsContainer" type="CenterContainer" parent="."]
-margin_top = 220.0
-margin_right = 512.0
-margin_bottom = 244.0
+margin_top = 144.0
+margin_right = 640.0
+margin_bottom = 168.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="arrowsLabel" type="Label" parent="arrowsContainer"]
-margin_left = 126.0
-margin_right = 386.0
+margin_left = 190.0
+margin_right = 450.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -32,16 +31,16 @@ __meta__ = {
 }
 
 [node name="jumpContainer" type="CenterContainer" parent="."]
-margin_top = 244.0
-margin_right = 512.0
-margin_bottom = 268.0
+margin_top = 168.0
+margin_right = 640.0
+margin_bottom = 192.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="jumpLabel" type="Label" parent="jumpContainer"]
-margin_left = 161.0
-margin_right = 351.0
+margin_left = 225.0
+margin_right = 415.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -51,16 +50,16 @@ __meta__ = {
 }
 
 [node name="runContainer" type="CenterContainer" parent="."]
-margin_top = 268.0
-margin_right = 512.0
-margin_bottom = 292.0
+margin_top = 192.0
+margin_right = 640.0
+margin_bottom = 216.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="runLabel" type="Label" parent="runContainer"]
-margin_left = 171.0
-margin_right = 341.0
+margin_left = 235.0
+margin_right = 405.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -70,16 +69,16 @@ __meta__ = {
 }
 
 [node name="continueContainer" type="CenterContainer" parent="."]
-margin_top = 384.0
-margin_right = 512.0
-margin_bottom = 408.0
+margin_top = 296.0
+margin_right = 640.0
+margin_bottom = 320.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="continueLabel" type="Label" parent="continueContainer"]
-margin_left = 141.0
-margin_right = 371.0
+margin_left = 205.0
+margin_right = 435.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )

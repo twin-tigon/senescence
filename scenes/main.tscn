@@ -9,20 +9,20 @@
 script = ExtResource( 2 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 256, 256 )
 texture = ExtResource( 1 )
+centered = false
 
 [node name="titleContainer" type="CenterContainer" parent="."]
-margin_top = 64.0
-margin_right = 512.0
-margin_bottom = 78.0
+margin_top = 32.0
+margin_right = 640.0
+margin_bottom = 68.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="titleLabel" type="Label" parent="titleContainer"]
-margin_left = 158.0
-margin_right = 353.0
+margin_left = 222.0
+margin_right = 417.0
 margin_bottom = 36.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -32,16 +32,16 @@ __meta__ = {
 }
 
 [node name="startContainer" type="CenterContainer" parent="."]
-margin_top = 384.0
-margin_right = 512.0
-margin_bottom = 398.0
+margin_top = 296.0
+margin_right = 640.0
+margin_bottom = 320.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="startLabel" type="Label" parent="startContainer"]
-margin_left = 156.0
-margin_right = 356.0
+margin_left = 220.0
+margin_right = 420.0
 margin_bottom = 24.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
