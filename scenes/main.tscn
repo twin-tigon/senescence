@@ -41,9 +41,8 @@ __meta__ = {
 
 [node name="startLabel" type="Label" parent="startContainer"]
 margin_left = 220.0
-margin_top = 6.0
 margin_right = 420.0
-margin_bottom = 30.0
+margin_bottom = 24.0
 custom_fonts/font = ExtResource( 3 )
 text = "Press ENTER to start"
 __meta__ = {
