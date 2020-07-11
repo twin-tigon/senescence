@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/player.png" type="Texture" id=2]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/player.gd" type="Script" id=4]
-[ext_resource path="res://scripts/platform.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,6 +17,23 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 24.0237, 7.91663 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "position"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("body:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.92615, 8 ), Vector2( 100, 8 ) ]
+}
 
 [node name="world" type="Node2D"]
 
@@ -50,19 +66,26 @@ limit_top = 0
 limit_right = 1280
 limit_bottom = 360
 
-[node name="platform" type="KinematicBody2D" parent="."]
-position = Vector2( 950, 300 )
-script = ExtResource( 5 )
+[node name="platform" type="Node2D" parent="."]
+position = Vector2( 905, 300 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tileMap" type="TileMap" parent="platform"]
+[node name="body" type="KinematicBody2D" parent="platform"]
+position = Vector2( -4.92615, 8 )
+motion/sync_to_physics = true
+
+[node name="tileMap" type="TileMap" parent="platform/body"]
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
-[node name="shape" type="CollisionShape2D" parent="platform"]
+[node name="shape" type="CollisionShape2D" parent="platform/body"]
 position = Vector2( 8.01936, -7.92296 )
 shape = SubResource( 3 )
+
+[node name="animation" type="AnimationPlayer" parent="platform"]
+autoplay = "position"
+anims/position = SubResource( 4 )
