@@ -412,7 +412,6 @@ offset = Vector2( 0, 2 )
 
 [node name="sprite_young_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
@@ -432,7 +431,6 @@ playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 24 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
@@ -451,7 +449,6 @@ playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 37 )
-frame = 1
 playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
@@ -472,7 +469,7 @@ volume_db = 15.758
 stream = ExtResource( 11 )
 
 [node name="platform_hor_2" type="Node2D" parent="."]
-position = Vector2( 930.222, 280 )
+position = Vector2( 905, 280 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -495,7 +492,7 @@ autoplay = "position"
 anims/position = SubResource( 42 )
 
 [node name="platform_hor_3" type="Node2D" parent="."]
-position = Vector2( 1334.04, 248 )
+position = Vector2( 1300, 248 )
 __meta__ = {
 "_edit_group_": true
 }
