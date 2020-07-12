@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/tree.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://effects/404394__eskimoneil__jump-thump.wav" type="AudioStream" id=10]
 [ext_resource path="res://effects/370362__devilqube__match-lighting-candle.wav" type="AudioStream" id=11]
 [ext_resource path="res://effects/86011__nextmaking__run-on-dart.wav" type="AudioStream" id=12]
+[ext_resource path="res://scripts/tree.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -345,10 +346,169 @@ tracks/0/keys = {
 "values": [ Vector2( 2470, 345 ), Vector2( 2470, 220 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=48]
+[sub_resource type="AtlasTexture" id=48]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=49]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 176, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=50]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 352, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=51]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 528, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=52]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 704, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=53]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 880, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=54]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1056, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=55]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1232, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=56]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1408, 0, 176, 208 )
+
+[sub_resource type="SpriteFrames" id=57]
+animations = [ {
+"frames": [ SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 59.1833, 93.2231 )
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 176, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 352, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 528, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 704, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 880, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1056, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1232, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1408, 0, 176, 208 )
+
+[sub_resource type="SpriteFrames" id=70]
+animations = [ {
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=71]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=72]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 176, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=73]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 352, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=74]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 528, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=75]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 704, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=76]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 880, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=77]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1056, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=78]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1232, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=79]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1408, 0, 176, 208 )
+
+[sub_resource type="SpriteFrames" id=80]
+animations = [ {
+"frames": [ SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=59]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -364,7 +524,7 @@ tracks/0/keys = {
 "values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=50]
+[sub_resource type="RectangleShape2D" id=60]
 extents = Vector2( 60.5383, 65.4938 )
 
 [node name="world" type="Node2D"]
@@ -403,10 +563,12 @@ shape = SubResource( 1 )
 
 [node name="sprite_young_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="sprite_young_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 7 )
+frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
@@ -416,17 +578,16 @@ playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
+frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_adult_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
@@ -435,16 +596,15 @@ playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 27 )
-frame = 1
 playing = true
 
 [node name="sprite_old_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 30 )
-frame = 1
 playing = true
 
 [node name="sprite_old_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
@@ -453,6 +613,7 @@ playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 40 )
+frame = 1
 playing = true
 
 [node name="fx_jump" type="AudioStreamPlayer" parent="player"]
@@ -615,17 +776,20 @@ __meta__ = {
 [node name="tree" type="KinematicBody2D" parent="platform_with_tree_2"]
 position = Vector2( 1.81372, -43.762 )
 scale = Vector2( 0.33, 0.33 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tree_sprite" type="Sprite" parent="platform_with_tree_2/tree"]
-modulate = Color( 0.760784, 0.760784, 0.760784, 1 )
-texture = ExtResource( 2 )
+[node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_2/tree"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 57 )
+frame = 1
+speed_scale = 2.0
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_2/tree"]
 visible = false
-shape = SubResource( 48 )
+shape = SubResource( 58 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_2"]
 motion/sync_to_physics = true
@@ -649,17 +813,19 @@ __meta__ = {
 [node name="tree" type="KinematicBody2D" parent="platform_with_tree_4"]
 position = Vector2( 1.81372, -43.762 )
 scale = Vector2( 0.33, 0.33 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tree_sprite" type="Sprite" parent="platform_with_tree_4/tree"]
-modulate = Color( 0.760784, 0.760784, 0.760784, 1 )
-texture = ExtResource( 2 )
+[node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_4/tree"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 70 )
+speed_scale = 2.0
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_4/tree"]
 visible = false
-shape = SubResource( 48 )
+shape = SubResource( 58 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_4"]
 motion/sync_to_physics = true
@@ -683,17 +849,19 @@ __meta__ = {
 [node name="tree" type="KinematicBody2D" parent="platform_with_tree_3"]
 position = Vector2( 1.81372, -43.762 )
 scale = Vector2( 0.33, 0.33 )
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="tree_sprite" type="Sprite" parent="platform_with_tree_3/tree"]
-modulate = Color( 0.760784, 0.760784, 0.760784, 1 )
-texture = ExtResource( 2 )
+[node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_3/tree"]
+scale = Vector2( 1, 1 )
+frames = SubResource( 80 )
+speed_scale = 2.0
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_3/tree"]
 visible = false
-shape = SubResource( 48 )
+shape = SubResource( 58 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_3"]
 motion/sync_to_physics = true
@@ -729,7 +897,7 @@ shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_hor_1"]
 autoplay = "position"
-anims/position = SubResource( 49 )
+anims/position = SubResource( 59 )
 
 [node name="shrine" type="KinematicBody2D" parent="."]
 modulate = Color( 0.745098, 0.745098, 0.745098, 1 )
@@ -746,7 +914,7 @@ texture = ExtResource( 7 )
 
 [node name="shape" type="CollisionShape2D" parent="shrine"]
 position = Vector2( 73.4314, -30.8231 )
-shape = SubResource( 50 )
+shape = SubResource( 60 )
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
