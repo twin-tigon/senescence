@@ -123,6 +123,7 @@ func _physics_process(delta):
 			break
 		elif collision.collider.name == "tree": # platform
 			velocity.y = -SHOOT_SPEED
+			collision.collider.animate()
 			break
 			
 	if sprite.global_position.y > get_viewport_rect().size.y:
