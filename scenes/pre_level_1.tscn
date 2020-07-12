@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/SpaceMono-Regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/SpaceMono-Bold.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/pre_level_1.gd" type="Script" id=3]
+
+[node name="world" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="sentence1" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 64.0
+margin_right = 512.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 1 )
+text = "When I was a kid I would spend all
+my holidays at my grandmother's place."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sentence2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 144.0
+margin_right = 512.0
+margin_bottom = 222.0
+custom_fonts/font = ExtResource( 1 )
+text = "She lived in the mountains, and every year we would light a candle for our ancestors."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 208.0
+margin_top = 296.0
+margin_right = 438.0
+margin_bottom = 320.0
+custom_fonts/font = ExtResource( 2 )
+text = "Press ENTER to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween1" type="Tween" parent="."]
+
+[node name="tween2" type="Tween" parent="."]
+
+[node name="tweenContinue" type="Tween" parent="."]
+[connection signal="tween_completed" from="tween1" to="." method="_on_tween1_tween_completed"]
+[connection signal="tween_completed" from="tween2" to="." method="_on_tween2_tween_completed"]
+[connection signal="tween_completed" from="tweenContinue" to="." method="_on_tweenContinue_tween_completed"]

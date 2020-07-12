@@ -10,7 +10,7 @@ func _on_tween_completed(_object, _key):
 	Global.lives = 3
 	Global.can_jump = true
 	Global.can_run = true
-	var levelScene = 'res://scenes/level_screen.tscn'
+	var levelScene = 'res://scenes/pre_level_1.tscn'
 	if get_tree().change_scene(levelScene) != OK:
 		print('error loading level scene')
 
