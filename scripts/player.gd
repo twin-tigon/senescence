@@ -17,8 +17,16 @@ var sprite_walk
 var sprite_jump
 var sprite_idle
 
-# Called when the node enters the scene tree for the first time.
+var fxJump
+var fxLand
+var fxRun
+var playerLanded = true
+
 func _ready():
+	fxJump = get_node('fx_jump')
+	fxLand = get_node('fx_land')
+	fxRun = get_node('fx_run')
+
 	match Global.level:
 		2:
 			sprite_run = $sprite_adult_run
@@ -65,6 +73,11 @@ func _physics_process(delta):
 	if press_run:
 		force = RUN_FORCE
 		max_speed = RUN_MAX_SPEED
+		if !fxRun.playing:
+			fxRun.play()
+	else:
+		fxRun.stop()
+
 	var run = force * (-1 if move_left else (1 if move_right else 0))
 	
 	# Slow down the player if they're not trying to move.
@@ -83,8 +96,16 @@ func _physics_process(delta):
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and press_jump :
 		velocity.y = -JUMP_SPEED
-		var fxJump = get_node('fx_jump')
 		fxJump.play()
+
+	if is_on_floor():
+		if !playerLanded:
+			fxLand.play()
+
+		playerLanded = true
+	else:
+		playerLanded = false
+
 
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)

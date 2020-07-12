@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/86011__nextmaking__run-on-dart.wav-2f64e56eeb703dff11174f5333ca94e8.sample"
+
+[deps]
+
+source_file="res://effects/86011__nextmaking__run-on-dart.wav"
+dest_files=[ "res://.import/86011__nextmaking__run-on-dart.wav-2f64e56eeb703dff11174f5333ca94e8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
