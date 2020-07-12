@@ -17,20 +17,26 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
+	_hide_all_sprites()
 	var move_left = Input.is_action_pressed('ui_left')
 	var move_right = Input.is_action_pressed('ui_right')
 	var press_run = can_run and Input.is_action_pressed('ui_shift')
 	var press_jump = can_jump and Input.is_action_pressed('ui_select')
 	
-	# Choose correct player orientation
+	# Choose correct player sprite and orientation
+	var sprite = $sprite_idle
+	if press_jump:
+		sprite = $sprite_jump
+	elif press_run:
+		sprite = $sprite_run
+	elif move_left or move_right:
+		sprite = $sprite_walk
+		
+	sprite.show()
 	if move_left:
-		$sprite.play("run")
-		$sprite.set_flip_h(false)
+		sprite.set_flip_h(true)
 	elif move_right:
-		$sprite.play("run")
-		$sprite.set_flip_h(true)
-	else:
-		$sprite.stop()
+		sprite.set_flip_h(false)
 	
 	## Run
 	# Horizontal movement code. First, get the player's input.
@@ -58,3 +64,11 @@ func _physics_process(delta):
 		velocity.y = -JUMP_SPEED
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+
+
+func _hide_all_sprites():
+	$sprite_idle.hide()
+	$sprite_jump.hide()
+	$sprite_walk.hide()
+	$sprite_run.hide()
+	
