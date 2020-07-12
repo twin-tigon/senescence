@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character-little.png-e5e173ce8659652a67516dd1f28d1fda.stex"
+path="res://.import/character-all-ages.png-9f8b29ef28ba2b84bf132b659db41b91.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/character-little.png"
-dest_files=[ "res://.import/character-little.png-e5e173ce8659652a67516dd1f28d1fda.stex" ]
+source_file="res://assets/character-all-ages.png"
+dest_files=[ "res://.import/character-all-ages.png-9f8b29ef28ba2b84bf132b659db41b91.stex" ]
 
 [params]
 

@@ -25,13 +25,13 @@ func _physics_process(delta):
 	var press_jump = Global.can_jump and Input.is_action_pressed('ui_select')
 	
 	# Choose correct player sprite and orientation
-	var sprite = $sprite_idle
+	var sprite = $sprite_young_idle
 	if press_jump:
-		sprite = $sprite_jump
+		sprite = $sprite_young_jump
 	elif press_run:
-		sprite = $sprite_run
+		sprite = $sprite_young_run
 	elif move_left or move_right:
-		sprite = $sprite_walk
+		sprite = $sprite_young_walk
 		
 	sprite.show()
 	if move_left:
@@ -90,10 +90,10 @@ func _physics_process(delta):
 			_restart_level()
 			
 func _hide_all_sprites():
-	$sprite_idle.hide()
-	$sprite_jump.hide()
-	$sprite_walk.hide()
-	$sprite_run.hide()
+	$sprite_young_idle.hide()
+	$sprite_young_jump.hide()
+	$sprite_young_walk.hide()
+	$sprite_young_run.hide()
 	
 func _game_over():
 	get_tree().change_scene('res://scenes/game_over.tscn')
