@@ -7,7 +7,7 @@ const WALK_FORCE = 300
 const WALK_MAX_SPEED = 100
 const STOP_FORCE = 1300
 const JUMP_SPEED = 180
-const SHOOT_SPEED = 400
+const SHOOT_SPEED = 150
 
 var velocity = Vector2()
 var next_scene
@@ -68,7 +68,7 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		if collision.collider.name == "tree": # shrine
+		if collision.collider.name == "shrine": # shrine
 			_next_level()
 			Global.level += 1
 			if Global.level == 2:
@@ -78,7 +78,7 @@ func _physics_process(delta):
 			else:
 				_win()
 			break
-		elif collision.collider.name == "body": # platform
+		elif collision.collider.name == "tree": # platform
 			velocity.y = -SHOOT_SPEED
 			break
 			
