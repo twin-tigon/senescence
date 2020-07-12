@@ -84,3 +84,6 @@ text = "Press ENTER to continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="tween" type="Tween" parent="."]
+[connection signal="tween_completed" from="tween" to="." method="_on_tween_completed"]

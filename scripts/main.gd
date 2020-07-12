@@ -2,7 +2,7 @@ extends Node2D
 
 onready var tween = get_node("tween")
 
-export var transition_duration = 1.00
+export var transition_duration = 2.00
 export var transition_type = 1
 
 func fade_out(stream_player):
