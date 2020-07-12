@@ -6,6 +6,9 @@ export var transition_duration = 1.00
 export var transition_type = 1
 
 func fade_out(stream_player):
+	if stream_player == $_NULL:
+		return
+
 	tween.interpolate_property(stream_player, "volume_db", -12, -80, transition_duration, transition_type, Tween.EASE_IN, 0)
 	tween.start()
 
