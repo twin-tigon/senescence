@@ -153,7 +153,13 @@ func _restart_level():
 	get_tree().change_scene('res://scenes/level.tscn')
 
 func _next_level():
-	get_tree().change_scene('res://scenes/level_screen.tscn')
+	match Global.level:
+		1:
+			get_tree().change_scene('res://scenes/pre_level_2.tscn')
+		2:
+			get_tree().change_scene('res://scenes/pre_level_3.tscn')
+		_:
+			get_tree().change_scene('res://scenes/pre_level_1.tscn')
 
 func _win():
 	get_tree().change_scene('res://scenes/main.tscn')

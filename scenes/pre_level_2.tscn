@@ -14,8 +14,8 @@ margin_top = 64.0
 margin_right = 512.0
 margin_bottom = 115.0
 custom_fonts/font = ExtResource( 1 )
-text = "When I was a kid I would spend all
-my holidays at my grandmother's place."
+text = "I remember those years as the
+happiest of my life. I was full of energy and felt like I had all time of the world."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,11 +24,11 @@ __meta__ = {
 [node name="sentence2" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 128.0
-margin_top = 144.0
+margin_top = 192.0
 margin_right = 512.0
-margin_bottom = 222.0
+margin_bottom = 270.0
 custom_fonts/font = ExtResource( 1 )
-text = "She lived in the mountains, and every year we would light a candle for our ancestors."
+text = "But the older I got, the less energized I felt, and playing those games felt stupid."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

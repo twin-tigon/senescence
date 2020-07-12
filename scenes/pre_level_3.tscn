@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/pre_level_3.gd" type="Script" id=1]
+[ext_resource path="res://fonts/SpaceMono-Regular.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/SpaceMono-Bold.tres" type="DynamicFont" id=3]
+
+[node name="world" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="sentence1" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 32.0
+margin_right = 512.0
+margin_bottom = 137.0
+custom_fonts/font = ExtResource( 2 )
+text = "After that year, I never went back
+to that place. I was too busy living my own life, and the mere thought of climbing a mountain would exhaust me."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sentence2" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 160.0
+margin_right = 512.0
+margin_bottom = 184.0
+custom_fonts/font = ExtResource( 2 )
+text = "Granny passed away"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sentence3" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 184.0
+margin_right = 512.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 2 )
+text = "Then, so did my dad."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sentence4" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 208.0
+margin_right = 512.0
+margin_bottom = 232.0
+custom_fonts/font = ExtResource( 2 )
+text = "Later, so did my mom."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sentence5" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 128.0
+margin_top = 232.0
+margin_right = 512.0
+margin_bottom = 256.0
+custom_fonts/font = ExtResource( 2 )
+text = "And this year, so did my husband."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enter" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 208.0
+margin_top = 296.0
+margin_right = 438.0
+margin_bottom = 320.0
+custom_fonts/font = ExtResource( 3 )
+text = "Press ENTER to continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween1" type="Tween" parent="."]
+
+[node name="tween2" type="Tween" parent="."]
+
+[node name="tween3" type="Tween" parent="."]
+
+[node name="tween4" type="Tween" parent="."]
+
+[node name="tween5" type="Tween" parent="."]
+
+[node name="tweenContinue" type="Tween" parent="."]
+[connection signal="tween_completed" from="tween1" to="." method="_on_tween1_tween_completed"]
+[connection signal="tween_completed" from="tween2" to="." method="_on_tween2_tween_completed"]
+[connection signal="tween_completed" from="tween3" to="." method="_on_tween3_tween_completed"]
+[connection signal="tween_completed" from="tween4" to="." method="_on_tween4_tween_completed"]
+[connection signal="tween_completed" from="tween5" to="." method="_on_tween5_tween_completed"]
+[connection signal="tween_completed" from="tweenContinue" to="." method="_on_tweenContinue_tween_completed"]
