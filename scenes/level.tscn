@@ -295,7 +295,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1690, 345 ), Vector2( 1690, 180 ) ]
+"values": [ Vector2( 1690, 345 ), Vector2( 1690, 160 ) ]
 }
 
 [sub_resource type="Animation" id=45]
@@ -402,113 +402,113 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=58]
 extents = Vector2( 59.1833, 93.2231 )
 
-[sub_resource type="AtlasTexture" id=61]
+[sub_resource type="AtlasTexture" id=59]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 176, 0, 176, 208 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 352, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=62]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 176, 0, 176, 208 )
+region = Rect2( 528, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=63]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 352, 0, 176, 208 )
+region = Rect2( 704, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=64]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 528, 0, 176, 208 )
+region = Rect2( 880, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=65]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 704, 0, 176, 208 )
+region = Rect2( 1056, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=66]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 880, 0, 176, 208 )
+region = Rect2( 1232, 0, 176, 208 )
 
 [sub_resource type="AtlasTexture" id=67]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 1056, 0, 176, 208 )
+region = Rect2( 1408, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=68]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1232, 0, 176, 208 )
+[sub_resource type="SpriteFrames" id=68]
+animations = [ {
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=69]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 1408, 0, 176, 208 )
-
-[sub_resource type="SpriteFrames" id=70]
-animations = [ {
-"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=71]
-flags = 4
-atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=72]
+[sub_resource type="AtlasTexture" id=70]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 176, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=73]
+[sub_resource type="AtlasTexture" id=71]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 352, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=74]
+[sub_resource type="AtlasTexture" id=72]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 528, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=75]
+[sub_resource type="AtlasTexture" id=73]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 704, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=76]
+[sub_resource type="AtlasTexture" id=74]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 880, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=77]
+[sub_resource type="AtlasTexture" id=75]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1056, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=78]
+[sub_resource type="AtlasTexture" id=76]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1232, 0, 176, 208 )
 
-[sub_resource type="AtlasTexture" id=79]
+[sub_resource type="AtlasTexture" id=77]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1408, 0, 176, 208 )
 
-[sub_resource type="SpriteFrames" id=80]
+[sub_resource type="SpriteFrames" id=78]
 animations = [ {
-"frames": [ SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 78 ), SubResource( 79 ) ],
+"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ), SubResource( 77 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=79]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -524,7 +524,7 @@ tracks/0/keys = {
 "values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=80]
 extents = Vector2( 60.5383, 65.4938 )
 
 [node name="world" type="Node2D"]
@@ -563,60 +563,59 @@ shape = SubResource( 1 )
 
 [node name="sprite_young_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="sprite_young_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 7 )
-frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_young_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 11 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
-frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_adult_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="sprite_adult_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 24 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 27 )
+frame = 1
 playing = true
 
 [node name="sprite_old_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="sprite_old_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 33 )
-frame = 1
 playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 37 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 40 )
-frame = 1
 playing = true
 
 [node name="fx_jump" type="AudioStreamPlayer" parent="player"]
@@ -679,7 +678,7 @@ autoplay = "position"
 anims/position = SubResource( 43 )
 
 [node name="platform_circ_4" type="Node2D" parent="."]
-position = Vector2( 1690, 325.779 )
+position = Vector2( 1690, 345 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -785,7 +784,6 @@ __meta__ = {
 }
 
 [node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_2/tree"]
-scale = Vector2( 1, 1 )
 frames = SubResource( 57 )
 frame = 1
 speed_scale = 2.0
@@ -822,8 +820,7 @@ __meta__ = {
 }
 
 [node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_4/tree"]
-scale = Vector2( 1, 1 )
-frames = SubResource( 70 )
+frames = SubResource( 68 )
 speed_scale = 2.0
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_4/tree"]
@@ -858,8 +855,7 @@ __meta__ = {
 }
 
 [node name="animated_tree" type="AnimatedSprite" parent="platform_with_tree_3/tree"]
-scale = Vector2( 1, 1 )
-frames = SubResource( 80 )
+frames = SubResource( 78 )
 speed_scale = 2.0
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_3/tree"]
@@ -900,7 +896,7 @@ shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_hor_1"]
 autoplay = "position"
-anims/position = SubResource( 59 )
+anims/position = SubResource( 79 )
 
 [node name="shrine" type="KinematicBody2D" parent="."]
 modulate = Color( 0.745098, 0.745098, 0.745098, 1 )
@@ -917,7 +913,7 @@ texture = ExtResource( 7 )
 
 [node name="shape" type="CollisionShape2D" parent="shrine"]
 position = Vector2( 73.4314, -30.8231 )
-shape = SubResource( 60 )
+shape = SubResource( 80 )
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
