@@ -77,6 +77,13 @@ func _physics_process(delta):
 		elif collision.collider.name == "body": # platform
 			velocity.y = -SHOOT_SPEED
 			
+	if sprite.global_position.y > get_viewport_rect().size.y:
+		Global.lives -= 1
+		if Global.lives <= 0:
+			print("Game over")
+		else:
+			get_tree().change_scene('res://scenes/level.tscn')
+			
 func _hide_all_sprites():
 	$sprite_idle.hide()
 	$sprite_jump.hide()

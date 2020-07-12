@@ -131,6 +131,7 @@ __meta__ = {
 
 [node name="sprite_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="player"]
@@ -145,15 +146,16 @@ limit_bottom = 360
 
 [node name="sprite_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 7 )
+frame = 1
 playing = true
 
 [node name="sprite_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 10 )
-frame = 1
 playing = true
 
 [node name="sprite_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="platform" type="Node2D" parent="."]
