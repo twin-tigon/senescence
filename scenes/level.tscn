@@ -1,94 +1,94 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
+[ext_resource path="res://assets/tree.png" type="Texture" id=2]
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/player.gd" type="Script" id=4]
 [ext_resource path="res://assets/character-little.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 112, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=4]
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 48, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=16]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
-"frames": [ SubResource( 25 ), SubResource( 26 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=20]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 24.0237, 7.91663 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "position"
+[sub_resource type="Animation" id=16]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -104,9 +104,13 @@ tracks/0/keys = {
 "values": [ Vector2( -4.92615, 8 ), Vector2( 100, 8 ) ]
 }
 
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 59.1833, 93.2231 )
+
 [node name="world" type="Node2D"]
 
 [node name="background" type="Sprite" parent="."]
+position = Vector2( 0, -0.629944 )
 scale = Vector2( 2, 1 )
 texture = ExtResource( 1 )
 centered = false
@@ -121,14 +125,17 @@ tile_data = PoolIntArray( 65535, 5, 0, 80, 3, 0, 131071, 5, 0, 65616, 3, 0, 1966
 [node name="player" type="KinematicBody2D" parent="."]
 position = Vector2( 25, 224 )
 script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="sprite_idle" type="AnimatedSprite" parent="player"]
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 frame = 1
 playing = true
 
 [node name="shape" type="CollisionShape2D" parent="player"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="camera" type="Camera2D" parent="player"]
 current = true
@@ -138,16 +145,17 @@ limit_right = 1280
 limit_bottom = 360
 
 [node name="sprite_run" type="AnimatedSprite" parent="player"]
-frames = SubResource( 9 )
-playing = true
-
-[node name="sprite_walk" type="AnimatedSprite" parent="player"]
-frames = SubResource( 16 )
+frames = SubResource( 7 )
 frame = 1
 playing = true
 
+[node name="sprite_walk" type="AnimatedSprite" parent="player"]
+frames = SubResource( 10 )
+playing = true
+
 [node name="sprite_jump" type="AnimatedSprite" parent="player"]
-frames = SubResource( 20 )
+frames = SubResource( 14 )
+frame = 2
 playing = true
 
 [node name="platform" type="Node2D" parent="."]
@@ -168,8 +176,21 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 3 )
+shape = SubResource( 15 )
 
 [node name="animation" type="AnimationPlayer" parent="platform"]
 autoplay = "position"
-anims/position = SubResource( 4 )
+anims/position = SubResource( 16 )
+
+[node name="tree" type="KinematicBody2D" parent="."]
+position = Vector2( 1260.67, 202.604 )
+scale = Vector2( 0.33, 0.33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="tree_sprite" type="Sprite" parent="tree"]
+texture = ExtResource( 2 )
+
+[node name="shape" type="CollisionShape2D" parent="tree"]
+shape = SubResource( 17 )
