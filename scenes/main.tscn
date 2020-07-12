@@ -54,3 +54,6 @@ __meta__ = {
 stream = ExtResource( 5 )
 volume_db = -12.0
 autoplay = true
+
+[node name="tween" type="Tween" parent="."]
+[connection signal="tween_completed" from="tween" to="." method="_on_tween_completed"]
