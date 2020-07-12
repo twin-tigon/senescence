@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://scripts/main.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://fonts/SpaceMono-Title.tres" type="DynamicFont" id=4]
 [ext_resource path="res://music/title.wav" type="AudioStream" id=5]
 [ext_resource path="res://fonts/SpaceMono-Subtitle.tres" type="DynamicFont" id=6]
+[ext_resource path="res://assets/logo.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "startContainer"
@@ -40,7 +41,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="logo" type="Sprite" parent="titleContainer"]
+position = Vector2( 322.598, 33.2587 )
+scale = Vector2( 0.72382, 0.72382 )
+texture = ExtResource( 7 )
+
 [node name="titleLabel" type="Label" parent="titleContainer"]
+visible = false
 margin_left = 175.0
 margin_top = 3.0
 margin_right = 465.0
