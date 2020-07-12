@@ -8,7 +8,7 @@ func fade_out():
 
 func _on_tween_completed(_object, _key):
 	Global.lives = 3
-	Global.can_jump = true`
+	Global.can_jump = true
 	Global.can_run = true
 	var levelScene = 'res://scenes/level_screen.tscn'
 	if get_tree().change_scene(levelScene) != OK:
