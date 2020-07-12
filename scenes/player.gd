@@ -7,10 +7,13 @@ const WALK_FORCE = 300
 const WALK_MAX_SPEED = 100
 const STOP_FORCE = 1300
 const JUMP_SPEED = 180
+const SHOOT_SPEED = 400
 
 var velocity = Vector2()
 var can_jump = true
 var can_run = true
+var next_scene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -45,7 +48,8 @@ func _physics_process(delta):
 	if press_run:
 		force = RUN_FORCE
 		max_speed = RUN_MAX_SPEED
-	var run = force * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
+	var run = force * (-1 if move_left else (1 if move_right else 0))
+	
 	# Slow down the player if they're not trying to move.
 	if abs(run) < force * 0.2:
 		# The velocity, slowed down a bit, and then reassigned.
@@ -64,6 +68,12 @@ func _physics_process(delta):
 		velocity.y = -JUMP_SPEED
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "tree": # shrine
+			get_tree().change_scene('res://scenes/main.tscn')
+		elif collision.collider.name == "body": # platform
+			velocity.y = -SHOOT_SPEED
 
 
 func _hide_all_sprites():
