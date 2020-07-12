@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="GMTK Jam 2020"
-run/main_scene="res://scenes/level.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
