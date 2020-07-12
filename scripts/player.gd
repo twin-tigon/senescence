@@ -83,6 +83,9 @@ func _physics_process(delta):
 	# Check for jumping. is_on_floor() must be called after movement code.
 	if is_on_floor() and press_jump :
 		velocity.y = -JUMP_SPEED
+		var fxJump = get_node('fx_jump')
+		fxJump.play()
+
 	# Move based on the velocity and snap to the ground.
 	velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	for i in get_slide_count():

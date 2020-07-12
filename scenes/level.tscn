@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=56 format=2]
 
 [ext_resource path="res://assets/background.png" type="Texture" id=1]
 [ext_resource path="res://assets/tree.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://music/level.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/shrine.png" type="Texture" id=7]
 [ext_resource path="res://scripts/level.gd" type="Script" id=8]
+[ext_resource path="res://effects/344500__sharesynth__jump05.wav" type="AudioStream" id=9]
+[ext_resource path="res://effects/404394__eskimoneil__jump-thump.wav" type="AudioStream" id=10]
+[ext_resource path="res://effects/370362__devilqube__match-lighting-candle.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -333,12 +336,11 @@ playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 37 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 40 )
-frame = 1
 playing = true
 
 [node name="sprite_old_run" type="AnimatedSprite" parent="player"]
@@ -352,13 +354,24 @@ playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 50 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 53 )
 frame = 1
 playing = true
+
+[node name="fx_jump" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource( 9 )
+
+[node name="fx_run" type="AudioStreamPlayer2D" parent="player"]
+
+[node name="fx_land" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource( 10 )
+
+[node name="fx_light" type="AudioStreamPlayer" parent="player"]
+stream = ExtResource( 11 )
 
 [node name="platform" type="Node2D" parent="."]
 position = Vector2( 900, 350 )

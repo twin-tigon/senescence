@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/344500__sharesynth__jump05.wav-12aa7313b94bdaee56968ce430820b40.sample"
+
+[deps]
+
+source_file="res://effects/344500__sharesynth__jump05.wav"
+dest_files=[ "res://.import/344500__sharesynth__jump05.wav-12aa7313b94bdaee56968ce430820b40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

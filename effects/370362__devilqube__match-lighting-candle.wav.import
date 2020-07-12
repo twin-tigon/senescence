@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/370362__devilqube__match-lighting-candle.wav-d9472b88f2b7824c62a83f437e3a4fd2.sample"
+
+[deps]
+
+source_file="res://effects/370362__devilqube__match-lighting-candle.wav"
+dest_files=[ "res://.import/370362__devilqube__match-lighting-candle.wav-d9472b88f2b7824c62a83f437e3a4fd2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
