@@ -10,8 +10,6 @@ const JUMP_SPEED = 180
 const SHOOT_SPEED = 400
 
 var velocity = Vector2()
-var can_jump = true
-var can_run = true
 var next_scene
 
 
@@ -23,8 +21,8 @@ func _physics_process(delta):
 	_hide_all_sprites()
 	var move_left = Input.is_action_pressed('ui_left')
 	var move_right = Input.is_action_pressed('ui_right')
-	var press_run = can_run and Input.is_action_pressed('ui_shift')
-	var press_jump = can_jump and Input.is_action_pressed('ui_select')
+	var press_run = Global.can_run and Input.is_action_pressed('ui_shift')
+	var press_jump = Global.can_jump and Input.is_action_pressed('ui_select')
 	
 	# Choose correct player sprite and orientation
 	var sprite = $sprite_idle
@@ -73,7 +71,11 @@ func _physics_process(delta):
 		if collision.collider.name == "tree": # shrine
 			_next_level()
 			Global.level += 1
-			if (Global.level > 3):
+			if Global.level == 2:
+				Global.can_run = false
+			elif Global.level == 3:
+				Global.can_jump = false
+			else:
 				_win()
 			break
 		elif collision.collider.name == "body": # platform
