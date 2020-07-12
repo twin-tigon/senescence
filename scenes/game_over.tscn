@@ -71,5 +71,4 @@ __meta__ = {
 [node name="animated_sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 320, 180 )
 frames = SubResource( 3 )
-frame = 1
 playing = true

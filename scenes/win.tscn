@@ -1,14 +1,91 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/final-shot.png" type="Texture" id=1]
 [ext_resource path="res://fonts/SpaceMono-Title.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/SpaceMono-Regular.tres" type="DynamicFont" id=3]
 [ext_resource path="res://scripts/win.gd" type="Script" id=4]
+[ext_resource path="res://assets/tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://assets/candle.png" type="Texture" id=6]
+[ext_resource path="res://assets/character-all-ages.png" type="Texture" id=7]
+[ext_resource path="res://assets/grave scene.png" type="Texture" id=8]
+[ext_resource path="res://assets/chatbubbles-dia.png" type="Texture" id=9]
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 288, 64, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 320, 64, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 96 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 128, 160 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 8 )
+region = Rect2( 128, 0, 128, 160 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="final-shot" type="Sprite" parent="."]
+[node name="background" type="Sprite" parent="."]
 modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
 position = Vector2( 320, 180 )
 texture = ExtResource( 1 )
@@ -54,10 +131,60 @@ __meta__ = {
 
 [node name="tween2" type="Tween" parent="."]
 
+[node name="tween3" type="Tween" parent="."]
+
 [node name="tweenEnd" type="Tween" parent="."]
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 4.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 15 )
+format = 1
+tile_data = PoolIntArray( 1245184, 16, 0, 1310720, 29, 0, 1376256, 29, 0, 1441792, 3, 0, 1441793, 1, 0, 1441794, 2, 0, 1507328, 6, 0, 1507329, 7, 0, 1507330, 8, 0 )
+
+[node name="winning_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 29.7245, 315.125 )
+scale = Vector2( 1.40338, 1.40338 )
+frames = SubResource( 8 )
+frame = 1
+playing = true
+
+[node name="granny" type="Node2D" parent="."]
+
+[node name="candle_sprite" type="AnimatedSprite" parent="granny"]
+position = Vector2( 290.65, 341.368 )
+scale = Vector2( 0.445567, 0.385601 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="ghost_sprite" type="AnimatedSprite" parent="granny"]
+position = Vector2( 369.83, 285.607 )
+frames = SubResource( 11 )
+frame = 1
+playing = true
+
+[node name="bubble_sprite" type="AnimatedSprite" parent="granny"]
+position = Vector2( 317.508, 211.47 )
+scale = Vector2( 1.00552, 1 )
+frames = SubResource( 12 )
+
+[node name="Label" type="Label" parent="granny/bubble_sprite"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -40.0
+margin_top = -14.173
+margin_right = 74.0
+margin_bottom = 19.827
+rect_scale = Vector2( 0.7, 0.74 )
+text = "You visited me!
+Bless you, mi hija"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="tween_completed" from="tween1" to="." method="_on_tween1_tween_completed"]
 [connection signal="tween_completed" from="tween2" to="." method="_on_tween2_tween_completed"]
+[connection signal="tween_completed" from="tween3" to="." method="_on_tween3_tween_completed"]
 [connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
