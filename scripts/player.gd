@@ -163,4 +163,4 @@ func _next_level():
 			get_tree().change_scene('res://scenes/pre_level_1.tscn')
 
 func _win():
-	get_tree().change_scene('res://scenes/main.tscn')
+	get_tree().change_scene('res://scenes/win.tscn')
