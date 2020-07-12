@@ -246,8 +246,24 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 24.0237, 7.91663 )
+
+[sub_resource type="Animation" id=42]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
+}
 
 [sub_resource type="Animation" id=43]
 length = 4.0
@@ -265,7 +281,7 @@ tracks/0/keys = {
 "values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=44]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -278,10 +294,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
+"values": [ Vector2( 1690, 345 ), Vector2( 1690, 180 ) ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=45]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -294,7 +310,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
+"values": [ Vector2( 705, 345 ), Vector2( 705, 280 ) ]
 }
 
 [sub_resource type="Animation" id=46]
@@ -310,8 +326,27 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
+"values": [ Vector2( 2273, 345 ), Vector2( 2273, 280 ) ]
 }
+
+[sub_resource type="Animation" id=47]
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2470, 345 ), Vector2( 2470, 220 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 59.1833, 93.2231 )
 
 [sub_resource type="Animation" id=49]
 length = 4.0
@@ -329,42 +364,7 @@ tracks/0/keys = {
 "values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
 }
 
-[sub_resource type="Animation" id=50]
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=41]
-extents = Vector2( 59.1833, 93.2231 )
-
-[sub_resource type="Animation" id=44]
-length = 4.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 905, 350 ), Vector2( 1010, 350 ) ]
-}
-
-[sub_resource type="RectangleShape2D" id=45]
+[sub_resource type="RectangleShape2D" id=50]
 extents = Vector2( 60.5383, 65.4938 )
 
 [node name="world" type="Node2D"]
@@ -372,7 +372,7 @@ show_behind_parent = true
 script = ExtResource( 8 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 1.33496, -1.2204 )
+position = Vector2( 0.667602, -1.2204 )
 scale = Vector2( 4.17659, 1 )
 texture = ExtResource( 1 )
 centered = false
@@ -403,60 +403,56 @@ shape = SubResource( 1 )
 
 [node name="sprite_young_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 4 )
-frame = 1
 playing = true
 
 [node name="sprite_young_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 7 )
-frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_young_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 11 )
-frame = 1
 playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
-frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_adult_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 17 )
+frame = 1
 playing = true
 
 [node name="sprite_adult_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 20 )
+frame = 1
 playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 24 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 27 )
+frame = 1
 playing = true
 
 [node name="sprite_old_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 30 )
+frame = 1
 playing = true
 
 [node name="sprite_old_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 33 )
-frame = 1
 playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 37 )
-frame = 1
 playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 40 )
-frame = 1
 playing = true
 
 [node name="fx_jump" type="AudioStreamPlayer" parent="player"]
@@ -489,11 +485,11 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_hor_2/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_hor_2"]
 autoplay = "position"
-anims/position = SubResource( 43 )
+anims/position = SubResource( 42 )
 
 [node name="platform_hor_3" type="Node2D" parent="."]
 position = Vector2( 1310, 250 )
@@ -512,14 +508,14 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_hor_3/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_hor_3"]
 autoplay = "position"
-anims/position = SubResource( 47 )
+anims/position = SubResource( 43 )
 
 [node name="platform_circ_4" type="Node2D" parent="."]
-position = Vector2( 1680, 230 )
+position = Vector2( 1690, 180 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -535,14 +531,14 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_circ_4/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_circ_4"]
 autoplay = "position"
-anims/position = SubResource( 48 )
+anims/position = SubResource( 44 )
 
 [node name="platform_ver_1" type="Node2D" parent="."]
-position = Vector2( 705, 330 )
+position = Vector2( 705, 345 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -558,14 +554,14 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_ver_1/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_ver_1"]
 autoplay = "position"
-anims/position = SubResource( 46 )
+anims/position = SubResource( 45 )
 
 [node name="platform_ver_2" type="Node2D" parent="."]
-position = Vector2( 2270, 300 )
+position = Vector2( 2273, 280 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -581,14 +577,14 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_ver_2/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_ver_2"]
 autoplay = "position"
-anims/position = SubResource( 49 )
+anims/position = SubResource( 46 )
 
 [node name="platform_ver_3" type="Node2D" parent="."]
-position = Vector2( 2470, 300 )
+position = Vector2( 2470, 220 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -604,11 +600,11 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_ver_3/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_ver_3"]
 autoplay = "position"
-anims/position = SubResource( 50 )
+anims/position = SubResource( 47 )
 
 [node name="platform_with_tree_2" type="Node2D" parent="."]
 position = Vector2( 2045.23, 308.557 )
@@ -629,7 +625,7 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_2/tree"]
 visible = false
-shape = SubResource( 41 )
+shape = SubResource( 48 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_2"]
 motion/sync_to_physics = true
@@ -642,7 +638,7 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_2/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="platform_with_tree_4" type="Node2D" parent="."]
 position = Vector2( 1994.12, 308.733 )
@@ -663,7 +659,7 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_4/tree"]
 visible = false
-shape = SubResource( 41 )
+shape = SubResource( 48 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_4"]
 motion/sync_to_physics = true
@@ -676,7 +672,7 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_4/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="platform_with_tree_3" type="Node2D" parent="."]
 position = Vector2( 1942.44, 309.233 )
@@ -697,7 +693,7 @@ texture = ExtResource( 2 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_3/tree"]
 visible = false
-shape = SubResource( 41 )
+shape = SubResource( 48 )
 
 [node name="body" type="KinematicBody2D" parent="platform_with_tree_3"]
 motion/sync_to_physics = true
@@ -710,7 +706,7 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_with_tree_3/body"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="platform_hor_1" type="Node2D" parent="."]
 position = Vector2( 327.583, 247.613 )
@@ -729,11 +725,11 @@ tile_data = PoolIntArray( -1, 14, 0, -65536, 13, 0, -65535, 12, 0 )
 
 [node name="shape" type="CollisionShape2D" parent="platform_hor_1/platform_hor_1"]
 position = Vector2( 8.01936, -7.92296 )
-shape = SubResource( 42 )
+shape = SubResource( 41 )
 
 [node name="animation" type="AnimationPlayer" parent="platform_hor_1"]
 autoplay = "position"
-anims/position = SubResource( 44 )
+anims/position = SubResource( 49 )
 
 [node name="shrine" type="KinematicBody2D" parent="."]
 modulate = Color( 0.745098, 0.745098, 0.745098, 1 )
@@ -750,7 +746,7 @@ texture = ExtResource( 7 )
 
 [node name="shape" type="CollisionShape2D" parent="shrine"]
 position = Vector2( 73.4314, -30.8231 )
-shape = SubResource( 45 )
+shape = SubResource( 50 )
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
