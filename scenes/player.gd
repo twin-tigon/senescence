@@ -71,18 +71,21 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "tree": # shrine
-			get_tree().change_scene('res://scenes/main.tscn')
+			_next_level()
 			Global.level += 1
-			print(Global.level)
+			if (Global.level > 3):
+				_win()
+			break
 		elif collision.collider.name == "body": # platform
 			velocity.y = -SHOOT_SPEED
+			break
 			
 	if sprite.global_position.y > get_viewport_rect().size.y:
 		Global.lives -= 1
 		if Global.lives <= 0:
-			print("Game over")
+			_game_over()
 		else:
-			get_tree().change_scene('res://scenes/level.tscn')
+			_restart_level()
 			
 func _hide_all_sprites():
 	$sprite_idle.hide()
@@ -90,3 +93,14 @@ func _hide_all_sprites():
 	$sprite_walk.hide()
 	$sprite_run.hide()
 	
+func _game_over():
+	get_tree().change_scene('res://scenes/game_over.tscn')
+
+func _restart_level():
+	get_tree().change_scene('res://scenes/level.tscn')
+
+func _next_level():
+	get_tree().change_scene('res://scenes/level_screen.tscn')
+
+func _win():
+	get_tree().change_scene('res://scenes/main.tscn')
