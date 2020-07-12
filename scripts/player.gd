@@ -12,10 +12,29 @@ const SHOOT_SPEED = 150
 var velocity = Vector2()
 var next_scene
 
+var sprite_run
+var sprite_walk
+var sprite_jump
+var sprite_idle
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	match Global.level:
+		2:
+			sprite_run = $sprite_adult_run
+			sprite_walk = $sprite_adult_walk
+			sprite_jump = $sprite_adult_jump
+			sprite_idle = $sprite_adult_run
+		3:
+			sprite_run = $sprite_old_run
+			sprite_walk = $sprite_old_walk
+			sprite_jump = $sprite_old_jump
+			sprite_idle = $sprite_old_run
+		_:
+			sprite_run = $sprite_young_run
+			sprite_walk = $sprite_young_walk
+			sprite_jump = $sprite_young_jump
+			sprite_idle = $sprite_young_run
 
 func _physics_process(delta):
 	_hide_all_sprites()
@@ -25,13 +44,13 @@ func _physics_process(delta):
 	var press_jump = Global.can_jump and Input.is_action_pressed('ui_select')
 	
 	# Choose correct player sprite and orientation
-	var sprite = $sprite_young_idle
+	var sprite = sprite_idle
 	if press_jump:
-		sprite = $sprite_young_jump
+		sprite = sprite_jump
 	elif press_run:
-		sprite = $sprite_young_run
+		sprite = sprite_run
 	elif move_left or move_right:
-		sprite = $sprite_young_walk
+		sprite = sprite_walk
 		
 	sprite.show()
 	if move_left:
@@ -94,6 +113,14 @@ func _hide_all_sprites():
 	$sprite_young_jump.hide()
 	$sprite_young_walk.hide()
 	$sprite_young_run.hide()
+	$sprite_adult_idle.hide()
+	$sprite_adult_jump.hide()
+	$sprite_adult_walk.hide()
+	$sprite_adult_run.hide()
+	$sprite_old_idle.hide()
+	$sprite_old_jump.hide()
+	$sprite_old_walk.hide()
+	$sprite_old_run.hide()
 	
 func _game_over():
 	get_tree().change_scene('res://scenes/game_over.tscn')
