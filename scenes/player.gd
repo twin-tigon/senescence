@@ -72,10 +72,11 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "tree": # shrine
 			get_tree().change_scene('res://scenes/main.tscn')
+			Global.level += 1
+			print(Global.level)
 		elif collision.collider.name == "body": # platform
 			velocity.y = -SHOOT_SPEED
-
-
+			
 func _hide_all_sprites():
 	$sprite_idle.hide()
 	$sprite_jump.hide()
