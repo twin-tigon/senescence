@@ -533,7 +533,7 @@ script = ExtResource( 8 )
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 0.667602, -1.2204 )
-scale = Vector2( 4.17659, 1 )
+scale = Vector2( 4.17346, 1 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -555,7 +555,7 @@ __meta__ = {
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 2850
+limit_right = 2670
 limit_bottom = 360
 
 [node name="shape" type="CollisionShape2D" parent="player"]
@@ -563,10 +563,12 @@ shape = SubResource( 1 )
 
 [node name="sprite_young_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="sprite_young_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 7 )
+frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
@@ -577,17 +579,16 @@ playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
+frame = 1
 playing = true
 offset = Vector2( 0, 2 )
 
 [node name="sprite_adult_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 17 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 20 )
-frame = 1
 playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
@@ -597,16 +598,15 @@ playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 27 )
-frame = 1
 playing = true
 
 [node name="sprite_old_run" type="AnimatedSprite" parent="player"]
 frames = SubResource( 30 )
-frame = 1
 playing = true
 
 [node name="sprite_old_walk" type="AnimatedSprite" parent="player"]
 frames = SubResource( 33 )
+frame = 1
 playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
@@ -616,6 +616,7 @@ playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
 frames = SubResource( 40 )
+frame = 1
 playing = true
 
 [node name="fx_jump" type="AudioStreamPlayer" parent="player"]
