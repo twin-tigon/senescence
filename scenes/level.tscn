@@ -343,7 +343,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 2470, 345 ), Vector2( 2470, 220 ) ]
+"values": [ Vector2( 2470, 345 ), Vector2( 2470, 210 ) ]
 }
 
 [sub_resource type="AtlasTexture" id=48]
@@ -574,6 +574,7 @@ offset = Vector2( 0, 2 )
 
 [node name="sprite_young_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 11 )
+frame = 1
 playing = true
 
 [node name="sprite_young_idle" type="AnimatedSprite" parent="player"]
@@ -592,6 +593,7 @@ playing = true
 
 [node name="sprite_adult_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 24 )
+frame = 1
 playing = true
 
 [node name="sprite_adult_idle" type="AnimatedSprite" parent="player"]
@@ -609,6 +611,7 @@ playing = true
 
 [node name="sprite_old_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 37 )
+frame = 1
 playing = true
 
 [node name="sprite_old_idle" type="AnimatedSprite" parent="player"]
@@ -722,7 +725,7 @@ autoplay = "position"
 anims/position = SubResource( 45 )
 
 [node name="platform_ver_2" type="Node2D" parent="."]
-position = Vector2( 2273, 342.671 )
+position = Vector2( 2273, 345 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -745,7 +748,7 @@ autoplay = "position"
 anims/position = SubResource( 46 )
 
 [node name="platform_ver_3" type="Node2D" parent="."]
-position = Vector2( 2470, 303.051 )
+position = Vector2( 2470, 345 )
 __meta__ = {
 "_edit_group_": true
 }
