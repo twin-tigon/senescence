@@ -155,7 +155,6 @@ playing = true
 
 [node name="sprite_jump" type="AnimatedSprite" parent="player"]
 frames = SubResource( 14 )
-frame = 2
 playing = true
 
 [node name="platform" type="Node2D" parent="."]
